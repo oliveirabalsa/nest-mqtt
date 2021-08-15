@@ -1,0 +1,3 @@
+export const REDIS_GET_ONE_USER_KEY = 'REDIS_GET_ONE_USER_KEY';
+export const REDIS_GET_USER_KEY = 'REDIS_GET_USER_KEY';
+export const REDIS_TIME_EXPIRATION = 60 * 1;

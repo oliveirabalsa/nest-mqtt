@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: "node-app"
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      DB_HOST: ${DATABASE_HOST}
+      DB_USER: ${DATABASE_USER}
+      DB_PASS: ${DATABASE_PASSWORD}
+      DB_NAME: ${DATABASE_NAME}
+  db:
+    image: postgres:alpine
+    container_name: node-db
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_NAME=${DATABASE_NAME}
+      - POSTGRES_HOST=${DATABASE_HOST}
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379      
+networks:
+  overlay:
