@@ -3,7 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { UserRepository } from './user.repository';
-import { RedisService } from '../../redis-service/redis-service.service';
+import { RedisService } from '../../infra/redis/redis-service/redis-service.service';
 import { REDIS_GET_ONE_USER_KEY } from 'src/config/Contants';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import Cache from 'src/infra/redis/Cache';
-import { REDIS_TIME_EXPIRATION } from './../config/Contants';
+import { REDIS_TIME_EXPIRATION } from '../../../config/Contants';
 
 @Injectable()
 export class RedisService {

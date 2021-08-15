@@ -4,7 +4,7 @@ import { Module } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { UserRepository } from './user.repository';
-import { RedisService } from 'src/redis-service/redis-service.service';
+import { RedisService } from 'src/infra/redis/redis-service/redis-service.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, UserRepository])],
